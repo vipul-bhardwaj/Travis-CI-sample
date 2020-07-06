@@ -4,4 +4,13 @@ services:
 
 script:
     - docker build -t vipulbhar/node .
-    - docker images vipulbhar/node    
+    - docker images vipulbhar/node  
+ 
+before_deploy:
+    - docker login -u vipulbhar -p Vipul@1208
+
+deploy:
+    provider: script
+    script: docker push vipulbhar/node
+    on:
+        branch : master   
