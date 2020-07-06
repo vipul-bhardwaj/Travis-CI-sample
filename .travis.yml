@@ -1,0 +1,7 @@
+sudo: required
+services:
+    - docker
+
+script:
+    - docker build -t vipulbhar/node .
+    - docker images vipulbhar/node    
